@@ -152,7 +152,7 @@ inline static NSString* keyForURL(NSURL* url) {
 		
 		[[NSNotificationCenter defaultCenter] performSelectorOnMainThread:@selector(postNotification:) withObject:notification waitUntilDone:YES];
 	} else {
-		[[EGOCache currentCache] setData:connection.responseData forKey:keyForURL(connection.imageURL) withTimeoutInterval:604800];
+		[[EGOCache currentCache] setData:connection.responseData forKey:keyForURL(connection.imageURL)];
 		
 		[currentConnections removeObjectForKey:connection.imageURL];
 		self.currentConnections = [[currentConnections copy] autorelease];
